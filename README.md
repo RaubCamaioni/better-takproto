@@ -15,3 +15,10 @@ Rebuild python bindings
 ```
 python -m grpc_tools.protoc -I . --python_betterproto_out=./src/takproto ./proto/tak.proto
 ```
+
+Recompile generates am empty __init__.py
+Add the following for usage convenience.
+```
+__version__ = "<version>"
+from takproto.takproto import *
+``
