@@ -1,5 +1,5 @@
 [project]
-name = "takproto"
+name = "better-takproto"
 dynamic = ["version"]
 description = "Add your description here"
 readme = "README.md"
