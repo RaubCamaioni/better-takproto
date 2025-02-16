@@ -2,6 +2,17 @@ version = 1
 requires-python = ">=3.8"
 
 [[package]]
+name = "better-takproto"
+version = "0.0.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "betterproto" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "betterproto" }]
+
+[[package]]
 name = "betterproto"
 version = "1.2.5"
 source = { registry = "https://pypi.org/simple" }
@@ -159,17 +170,6 @@ name = "stringcase"
 version = "1.2.0"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f3/1f/1241aa3d66e8dc1612427b17885f5fcd9c9ee3079fc0d28e9a3aeeb36fa3/stringcase-1.2.0.tar.gz", hash = "sha256:48a06980661908efe8d9d34eab2b6c13aefa2163b3ced26972902e3bdfd87008", size = 2958 }
-
-[[package]]
-name = "takproto"
-version = "0.0.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "betterproto" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "betterproto" }]
 
 [[package]]
 name = "typing-extensions"
