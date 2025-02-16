@@ -4,6 +4,27 @@ on: [pull_request, push, workflow_dispatch]
 
 jobs:
 
+  build:
+    needs:
+    - test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Install pypa/build
+        run: pip install build
+      - name: Build wheel and source
+        run: python3 -m build
+      - name: Store artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-package-distributions
+          path: dist/
+          
   publish-to-pypi:
     name: Publish to PyPI
     if: startsWith(github.ref, 'refs/tags/')
